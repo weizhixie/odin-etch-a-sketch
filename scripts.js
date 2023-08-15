@@ -8,4 +8,14 @@ function createSquares() {
     }
 }
 
+function changeSquareColor() {
+    const getSquares = document.querySelectorAll(".squares");
+    getSquares.forEach((square) => {
+        square.addEventListener("mouseenter", () => {
+            square.classList.add("change-square-color");
+        });
+    });
+}
+
 createSquares();
+changeSquareColor();

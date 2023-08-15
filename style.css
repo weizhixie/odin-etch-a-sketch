@@ -24,3 +24,7 @@ body {
     height: 6.25%;
     border: 1px solid black;
 }
+
+.change-square-color {
+    background-color: red;
+}
