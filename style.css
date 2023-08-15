@@ -16,7 +16,7 @@ body {
     flex-wrap: wrap;
     width: 560px;
     height: 560px;
-    border: 1px solid black;
+    margin-top: 20px;
 }
 
 .squares {
@@ -27,4 +27,9 @@ body {
 
 .change-square-color {
     background-color: red;
+}
+
+.change-size-btn {
+    font-size: 18px;
+    padding: 15px;
 }
