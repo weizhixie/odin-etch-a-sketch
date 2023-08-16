@@ -7,8 +7,13 @@
 body {
     height: 100vh;
     display: flex;
-    justify-content: center;
+    font-size: 26px;
+    flex-direction: column;
     align-items: center;
+}
+
+main {
+    margin: auto;
 }
 
 .square-container {
@@ -16,7 +21,7 @@ body {
     flex-wrap: wrap;
     width: 560px;
     height: 560px;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 .squares {
@@ -28,4 +33,18 @@ body {
 .buttons {
     font-size: 18px;
     padding: 15px;
+}
+
+footer {
+    background-color: #1f2937;
+    color: #e5e7eb;
+    width: 100vw;
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
 }
