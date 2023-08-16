@@ -25,10 +25,6 @@ body {
     border: 1px solid black;
 }
 
-.change-square-color {
-    background-color: black;
-}
-
 .buttons {
     font-size: 18px;
     padding: 15px;

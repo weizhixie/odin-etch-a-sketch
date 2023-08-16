@@ -15,7 +15,7 @@ function changeSquareColor() {
 
     getAllSquares().forEach((square) => {
         square.addEventListener("mouseenter", () => {
-            square.classList.add("change-square-color");
+            square.style.backgroundColor = "black";
         });
     });
 
@@ -76,7 +76,7 @@ function editSquareSize(size) {
      */
     const percentage = GIRD_TOTAL_SIZE / size / GIRD_TOTAL_SIZE * 100;
     getAllSquares().forEach((square) => {
-        square.setAttribute("style", `width: ${percentage}%; height: ${percentage}%;`);
+        square.style.cssText = `width: ${percentage}%; height: ${percentage}%;`;
     });
 }
 
