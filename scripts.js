@@ -12,11 +12,37 @@ function createSquares(size = 16) {
 
 function changeSquareColor() {
     const getSquares = document.querySelectorAll(".squares");
+    const allBtn = document.querySelectorAll(".buttons");
+
     getSquares.forEach((square) => {
         square.addEventListener("mouseenter", () => {
             square.classList.add("change-square-color");
         });
     });
+
+    allBtn.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            getSquares.forEach((square) => {
+                square.addEventListener("mouseenter", () => {
+                    if (btn.id === "rgb-color-btn") {
+                        square.style.backgroundColor = getRandomColor();
+                    }
+                    else if (btn.id === "black-color-btn") {
+                        square.style.backgroundColor = "black";
+                    }
+                });
+            });
+        });
+    });
+}
+
+function getRandomColor() {
+    const letters = "0123456789ABCDEF";
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
 }
 
 function changeNumberOfSquares() {
@@ -29,7 +55,7 @@ function changeNumberOfSquares() {
             editSquareSize(inputSize);
         }
         else {
-            alert("Please enter a grid size between number 1 to 64.")
+            alert("Please enter a grid size between number 1 to 64.");
         }
     });
 }

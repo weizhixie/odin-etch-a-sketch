@@ -26,10 +26,10 @@ body {
 }
 
 .change-square-color {
-    background-color: red;
+    background-color: black;
 }
 
-.change-size-btn {
+.buttons {
     font-size: 18px;
     padding: 15px;
 }
