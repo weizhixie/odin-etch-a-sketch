@@ -11,10 +11,9 @@ function createSquares(size = 16) {
 }
 
 function changeSquareColor() {
-    const getSquares = document.querySelectorAll(".squares");
     const allBtn = document.querySelectorAll(".buttons");
 
-    getSquares.forEach((square) => {
+    getAllSquares().forEach((square) => {
         square.addEventListener("mouseenter", () => {
             square.classList.add("change-square-color");
         });
@@ -22,7 +21,7 @@ function changeSquareColor() {
 
     allBtn.forEach((btn) => {
         btn.addEventListener("click", () => {
-            getSquares.forEach((square) => {
+            getAllSquares().forEach((square) => {
                 square.addEventListener("mouseenter", () => {
                     if (btn.id === "rgb-color-btn") {
                         square.style.backgroundColor = getRandomColor();
@@ -45,6 +44,10 @@ function getRandomColor() {
     return color;
 }
 
+function getAllSquares() {
+    return document.querySelectorAll(".squares");
+}
+
 function changeNumberOfSquares() {
     const changeSizeBtn = document.querySelector(".change-size-btn");
     changeSizeBtn.addEventListener("click", () => {
@@ -61,8 +64,7 @@ function changeNumberOfSquares() {
 }
 
 function removeSquares() {
-    const squares = document.querySelectorAll(".squares");
-    squares.forEach((square) => {
+    getAllSquares().forEach((square) => {
         squareContainer.removeChild(square);
     });
 }
@@ -73,8 +75,7 @@ function editSquareSize(size) {
      * the grid total size(total width and total height).
      */
     const percentage = GIRD_TOTAL_SIZE / size / GIRD_TOTAL_SIZE * 100;
-    const squares = document.querySelectorAll(".squares");
-    squares.forEach((square) => {
+    getAllSquares().forEach((square) => {
         square.setAttribute("style", `width: ${percentage}%; height: ${percentage}%;`);
     });
 }
