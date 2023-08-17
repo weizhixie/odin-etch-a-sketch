@@ -49,17 +49,13 @@ function getAllSquares() {
 }
 
 function changeNumberOfSquares() {
-    const changeSizeBtn = document.querySelector(".change-size-btn");
-    changeSizeBtn.addEventListener("click", () => {
-        const inputSize = prompt("Please enter a grid size between number 1 to 64.");
-        if (inputSize && inputSize > 0 && inputSize <= 64) {
-            removeSquares();
-            createSquares(inputSize);
-            editSquareSize(inputSize);
-        }
-        else {
-            alert("Please enter a grid size between number 1 to 64.");
-        }
+    const gridSizeSlider = document.querySelector(".grid-size-slider");
+    const outputSliderValue = document.querySelector(".grid-size-slider-value")
+    gridSizeSlider.addEventListener("click", () => {
+        removeSquares();
+        createSquares(gridSizeSlider.value);
+        editSquareSize(gridSizeSlider.value);
+        outputSliderValue.textContent = `Grid size: ${gridSizeSlider.value} X ${gridSizeSlider.value}`;
     });
 }
 

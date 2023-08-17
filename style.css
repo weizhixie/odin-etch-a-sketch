@@ -48,3 +48,12 @@ footer {
 a {
     text-decoration: none;
 }
+
+.btn-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.grid-size-slider {
+    width: 100%;
+}
