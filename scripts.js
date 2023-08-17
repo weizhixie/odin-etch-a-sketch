@@ -21,6 +21,9 @@ function changeSquareColor() {
 
     allBtn.forEach((btn) => {
         btn.addEventListener("click", () => {
+            allBtn.forEach((btn) => btn.classList.remove("buttons-active"));
+            btn.classList.add("buttons-active");
+
             getAllSquares().forEach((square) => {
                 square.addEventListener("mouseenter", () => {
                     if (btn.id === "rgb-color-btn") {
@@ -50,7 +53,7 @@ function getAllSquares() {
 
 function changeNumberOfSquares() {
     const gridSizeSlider = document.querySelector(".grid-size-slider");
-    const outputSliderValue = document.querySelector(".grid-size-slider-value")
+    const outputSliderValue = document.querySelector(".grid-size-slider-value");
     gridSizeSlider.addEventListener("click", () => {
         removeSquares();
         createSquares(gridSizeSlider.value);
