@@ -8,6 +8,8 @@ function createSquares(size = 16) {
         squareContainer.appendChild(squares);
     }
     changeSquareColor();
+    clearSquareColor();
+    changeNumberOfSquares();
 }
 
 function changeSquareColor() {
@@ -77,6 +79,13 @@ function removeSquares() {
     });
 }
 
+function clearSquareColor() {
+    const clearColorBtn = document.querySelector("#clear-color-btn");
+    clearColorBtn.addEventListener("click", () => {
+        getAllSquares().forEach((square) => square.style.backgroundColor = "");
+    });
+}
+
 function editSquareSize(size) {
     /**
      * Calculate the percentage of each part(square) of 
@@ -89,4 +98,3 @@ function editSquareSize(size) {
 }
 
 createSquares();
-changeNumberOfSquares();

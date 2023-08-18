@@ -33,9 +33,7 @@ main {
     border: 1px solid black;
 }
 
-#black-color-btn,
-#rgb-color-btn,
-#darken-color-btn {
+.color-button {
     font-size: 18px;
     padding: 0 40px;
 }
