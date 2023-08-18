@@ -41,6 +41,10 @@ function changeSquareColor() {
                     square.style.filter = `brightness(${square.style.filter.replace(/\D/g, "") - 10}%)`;
                 }
             }
+            else if (clickedButton === "eraser-color-btn") {
+                square.style.backgroundColor = ""
+                square.style.filter = "";
+            }
             else {
                 square.style.backgroundColor = "black";
                 square.style.filter = "";
