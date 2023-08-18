@@ -12,28 +12,37 @@ function createSquares(size = 16) {
 
 function changeSquareColor() {
     const allBtn = document.querySelectorAll(".buttons");
-
-    getAllSquares().forEach((square) => {
-        square.addEventListener("mouseenter", () => {
-            square.style.backgroundColor = "black";
-        });
-    });
+    let clickedButton;
 
     allBtn.forEach((btn) => {
         btn.addEventListener("click", () => {
             allBtn.forEach((btn) => btn.classList.remove("buttons-active"));
             btn.classList.add("buttons-active");
 
-            getAllSquares().forEach((square) => {
-                square.addEventListener("mouseenter", () => {
-                    if (btn.id === "rgb-color-btn") {
-                        square.style.backgroundColor = getRandomColor();
-                    }
-                    else if (btn.id === "black-color-btn") {
-                        square.style.backgroundColor = "black";
-                    }
-                });
-            });
+            clickedButton = btn.id;
+        });
+    });
+
+    getAllSquares().forEach((square) => {
+        square.addEventListener("mouseenter", () => {
+            if (clickedButton === "rgb-color-btn") {
+                square.style.backgroundColor = getRandomColor();
+                square.style.filter = "";
+            }
+            else if (clickedButton === "darken-color-btn") {
+                if (square.style.filter === "") {
+                    square.style.backgroundColor = "white";
+                    square.style.filter = "brightness(90%)";
+                }
+                else {
+                    square.style.backgroundColor = "white";
+                    square.style.filter = `brightness(${square.style.filter.replace(/\D/g, "") - 10}%)`;
+                }
+            }
+            else {
+                square.style.backgroundColor = "black";
+                square.style.filter = "";
+            }
         });
     });
 }
