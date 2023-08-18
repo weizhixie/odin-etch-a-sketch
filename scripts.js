@@ -9,7 +9,6 @@ function createSquares(size = 16) {
     }
     changeSquareColor();
     clearSquareColor();
-    changeNumberOfSquares();
 }
 
 function changeSquareColor() {
@@ -46,7 +45,7 @@ function changeSquareColor() {
                 square.style.filter = "";
             }
             else if (clickedButton === "pick-color-btn") {
-                const colorPickerValue = document.querySelector("#color-picker").value
+                const colorPickerValue = document.querySelector("#color-picker").value;
                 square.style.backgroundColor = colorPickerValue;
                 square.style.filter = "";
             }
@@ -54,6 +53,16 @@ function changeSquareColor() {
                 square.style.backgroundColor = "black";
                 square.style.filter = "";
             }
+        });
+    });
+}
+
+function toggleGrid() {
+    const toggleGriBtn = document.querySelector("#toggle-grid-btn");
+    toggleGriBtn.addEventListener("click", () => {
+        toggleGriBtn.classList.toggle("buttons-active");
+        getAllSquares().forEach((square) => {
+            square.classList.toggle("squares-no-grids");
         });
     });
 }
@@ -107,3 +116,5 @@ function editSquareSize(size) {
 }
 
 createSquares();
+changeNumberOfSquares();
+toggleGrid();
