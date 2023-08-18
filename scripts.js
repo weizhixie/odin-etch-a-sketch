@@ -42,7 +42,12 @@ function changeSquareColor() {
                 }
             }
             else if (clickedButton === "eraser-color-btn") {
-                square.style.backgroundColor = ""
+                square.style.backgroundColor = "";
+                square.style.filter = "";
+            }
+            else if (clickedButton === "pick-color-btn") {
+                const colorPickerValue = document.querySelector("#color-picker").value
+                square.style.backgroundColor = colorPickerValue;
                 square.style.filter = "";
             }
             else {
