@@ -31,12 +31,14 @@ function changeSquareColor() {
                 square.style.filter = "";
             }
             else if (clickedButton === "darken-color-btn") {
-                if (square.style.filter === "") {
+                if (square.style.backgroundColor !== "" && square.style.filter === "") {
+                    square.style.filter = "brightness(90%)";
+                }
+                else if (square.style.filter === "") {
                     square.style.backgroundColor = "white";
                     square.style.filter = "brightness(90%)";
                 }
                 else {
-                    square.style.backgroundColor = "white";
                     square.style.filter = `brightness(${square.style.filter.replace(/\D/g, "") - 10}%)`;
                 }
             }
