@@ -60,6 +60,11 @@ main {
     border-color: blue;
 }
 
+header{
+    margin-top: 30px;
+    font-size: 36px;
+}
+
 footer {
     background-color: #1f2937;
     color: #e5e7eb;
@@ -79,7 +84,7 @@ a {
     justify-content: space-between;
     gap: 20px;
     flex-wrap: wrap;
-    width: 620px;
+    width: 640px;
     margin-bottom: 30px;
 }
 
