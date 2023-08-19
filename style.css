@@ -10,6 +10,7 @@ body {
     font-size: 26px;
     flex-direction: column;
     align-items: center;
+    background-color: #ededed;
 }
 
 main {
@@ -24,7 +25,11 @@ main {
     flex-wrap: wrap;
     width: 560px;
     height: 560px;
-    margin-top: 50px;
+    background-color: white;
+}
+
+.square-container-border {
+    border: 10px solid #d5d5d5;
 }
 
 .squares {
@@ -75,6 +80,7 @@ a {
     gap: 20px;
     flex-wrap: wrap;
     width: 620px;
+    margin-bottom: 30px;
 }
 
 .slide-container {
