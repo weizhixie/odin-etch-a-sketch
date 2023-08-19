@@ -33,7 +33,7 @@ main {
     border: 1px solid black;
 }
 
-.squares-no-grids {
+.squares-grid-deactivate {
     border: 0 solid black;
 }
 

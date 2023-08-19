@@ -62,9 +62,8 @@ function changeSquareColor() {
 function toggleGrid() {
     const toggleGriBtn = document.querySelector("#toggle-grid-btn");
     toggleGriBtn.addEventListener("click", () => {
-        toggleGriBtn.classList.toggle("buttons-active");
         getAllSquares().forEach((square) => {
-            square.classList.toggle("squares-no-grids");
+            square.classList.toggle("squares-grid-deactivate");
         });
     });
 }
